@@ -1,5 +1,5 @@
 # Customer-Segmentation-and-Perk-Allocation-Analysis
-THIS PROJECT FEATURES THREE STAGES:
+## THIS PROJECT FEATURES THREE STAGES:
 
 
 Familiarize yourself with the business context. Use SQL to extract a customer dataset. Explore the data at different levels of aggregation and form a plan for further analysis.
@@ -35,9 +35,9 @@ Create an executive summary and slides of the customer segmentation results and 
 
 
 
-CHAPTER 1: THE PROJECT GOAL
+## CHAPTER 1: THE PROJECT GOAL
 
-The goal of this Project is to Help the Head of Marketing-  Elena Tarrant to achieve customer retention by using the following strategy- specifically rewards programs, an advanced feature proven to generate repeat business if executed well.
+The goal of this Project is to Help the Head of Marketing - Elena Tarrant to achieve customer retention by using the following strategy- specifically rewards programs, an advanced feature proven to generate repeat business if executed well.
 
 My mission as a Data analyst is to First check if the data supports Elena’s hypothesis about the existence of customers that would be especially interested in the perks she is proposing, Then for each customer, I should assign a likely favorite perk. Listed Below are the Perks.
 
@@ -65,7 +65,7 @@ How should the data be set up (e.g., filtered, aggregated) to avoid a logically 
 
 
 
-CHAPTER 2: EXPLORE THE TABLE & DATASETS
+## CHAPTER 2: EXPLORE THE TABLE & DATASETS
 
 TravelTide stores its data in a relational database, which I  access by Connecting to the TravelTide database. postgres://Test:bQNxVzJL4g6u@ep-noisy-flower-846766.us-east-2.aws.neon.tech/TravelTide:
 This database comprises four tables: Users, Sessions, Flights, and Hotels. In the following sections, I explored and provided snapshots of each table that I queried using the SQL Select statement, and I also provided the Query.
@@ -129,10 +129,11 @@ SELECT * FROM public.hotels;
 
 
 
-CHAPTER 3: EXPLORATORY ANALYSIS/ DATA AGGREGATION
+## CHAPTER 3: EXPLORATORY ANALYSIS/ DATA AGGREGATION
+
 In this Chapter, I performed some Exploratory Analysis and aggregation on the Dataset to see the performance of the Users.
 What are the Top Airlines with the most customers and Total count of uncancelled Trips?
- How many customers Booked both flights and a hotel, How Many customers booked only either of the two?
+How many customers Booked both flights and a hotel, How Many customers booked only either of the two?
 How many users Canceled or Didn’t cancel their flight Booking?
 How many Users Brought in Checked Bags, or How many Checked Bags were brought by each Customer and Customer with No Check Bag?
 How many Users are consistent with the hotel, How many rooms and what’s the total amount spent By Each of the Customers?
@@ -334,7 +335,7 @@ limit 250;
 
 
 
-CHAPTER 4: RFM ANALYSIS
+## CHAPTER 4: RFM ANALYSIS
 
 In this chapter, I made calculations related to the business context and then segmented customer behavior data with statistics using (RFM ANALYSIS- Recency, Frequency, Monetary ) and visual techniques using Tableau
 
