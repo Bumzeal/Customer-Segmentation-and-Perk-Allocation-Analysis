@@ -242,34 +242,32 @@ The columns used for the RFM include (Flight.Depature_Time, Flight.trip_id, Flig
 
 RFM Scores mean Assigning numerical scores to each customer based on recency, frequency, and monetary value. For this Project, I assigned scores ranging from 1 to 5, with 5 indicating the highest recency, frequency, or monetary value.
 
-
-See the Analysis Below, Showing the segmentation of users based on their  Recency,  Frequency, and Monetary Scores, Filtering Each Segment by the number of check bags. 
+See the Analysis Below, Showing the segmentation of users based on their  Recency, Frequency, and Monetary Scores, Filtering Each Segment by the number of check bags. 
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/097f5554-5c9b-4035-8855-4ae4964e6c83)
 
 ### Targeted Marketing
 The Customers were Segmented into five different groups, this was achieved by Concatenating the RFM Scores, Below is the Segment.
 
-High Recency, High Frequency, High Monetary Value: "High Performing customer " 
-Average Recency, Average Frequency, Average Monetary Value: "Average performing customer" 
-Low Recency, Low Frequency, Low Monetary Value: "Low Performing Customers"
-Very low Recency, Very Low Frequency, Very High Monetary Value: "Almost Lost customer”
-Extremely low Recency, Extremely Low Frequency, Extremely High Monetary Value: 'Lost customer'
+1. High Recency, High Frequency, High Monetary Value: "High Performing customer "
+2. Average Recency, Average Frequency, Average Monetary Value: "Average performing customer"
+3. Low Recency, Low Frequency, Low Monetary Value: "Low Performing Customers"
+4. Very low Recency, Very Low Frequency, Very High Monetary Value: "Almost Lost customer”
+5. Extremely low Recency, Extremely Low Frequency, Extremely High Monetary Value: 'Lost customer'
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/5147718f-7e72-45ac-a9fb-d5f037009258)
 
 
-
-
 ### Conclusion 
  Having carried out the Segmentation, the Final step is to tailor marketing strategies and campaigns for each customer segment based on the RFM Aggregated score. For this project, I offered the listed Perks as follows.
- High-performing customers To Exclusive Discounts
-Average performing customers To 1-night free hotel with a flight
-Low-performing customers To  Free hotel meal 
-Almost Lost customer  To 'Free checked bag
-Lost customer  To cancellation fees' 
+ 1. High-performing customers To Exclusive Discounts
+ 2. Average performing customers To 1-night free hotel with a flight
+ 3. Low-performing customers To  Free hotel meal
+ 4. Almost Lost customer  To 'Free checked bag
+ 5. Lost customer To cancellation fees' 
 
-![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/50f48a40-ef9b-43d1-acdc-b45c9030b8fc)
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/ce4f59c2-b227-4535-8f3e-c9950934e4b7)
+
 
 
 
