@@ -1,9 +1,15 @@
 # Customer-Segmentation-and-Perk-Allocation-Analysis
-## THIS PROJECT FEATURES THREE STAGES:
+## THIS PROJECT BACKGROUND:
 
+In this Project, I work with the Market Department of Travel-Tide an online travel industry to segment customer data according to business needs and deliver data-driven recommendations based on my findings.
 
-Based on the context. Use SQL to extract a customer dataset. Explore the data at different levels of aggregation and form a plan for further analysis.
-Make calculations related to the business context then segment customer behavior data with statistical and visual techniques using the appropriate tools.kk
+Following the startup playbook, TravelTide has maintained a hyper-focus on building an unfair advantage along a limited number of dimensions - in this case, building the biggest travel inventory and making it easily searchable. Because of this narrow focus, certain aspects of the TravelTide customer experience are underdeveloped, resulting in poor customer retention.
+
+The Head of the marketing dept is well known in the Marketing community as an expert in customer retention strategies,Using specific rewards programs, an advanced feature proven to generate repeat business if executed well.
+
+The team's mission is to design and execute a fantastic personalized rewards program that keeps customers returning to the TravelTide platform. It is difficult to personalize rewards for customers without first understanding them, so for the project to be successful, The Team needs the data team for customer insights. Click  Below to See the Insight Provided.
+
+Based on the context, I Used SQL to extract a customer dataset from the Database and import it into Tableau, Performing Data Modelling. Explore the data at different levels of aggregation and form a plan for further analysis. I Made calculations related to the business context and then segmented customer behavior data with statistical and visual techniques using RFM techniques.
 
 
 ## CHAPTER 1: THE PROJECT GOAL
