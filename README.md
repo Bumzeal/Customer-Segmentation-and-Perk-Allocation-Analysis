@@ -162,7 +162,7 @@ This query identifies customers who consistently book both flights and hotels, d
 
 Select *
 From (select users.user_id,count(hotels.trip_id) As No_trip,count(hotels.nights) As Total_night_spent,
- 			 count(hotels.rooms) As No_rooms_booked,sum(hotels.hotel_per_room_usd) As Total_amt_paid 
+count(hotels.rooms) As No_rooms_booked,sum(hotels.hotel_per_room_usd) As Total_amt_paid 
 From public.users 
 Join public.sessions 
 On sessions.user_id = users.user_id
@@ -175,26 +175,7 @@ where  sub.Total_amt_paid > (select avg(hotels.hotel_per_room_usd)
 From hotels) and sub.No_rooms_booked > 3
 order by sub.Total_amt_paid desc;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/59e8be6c-3c54-4a5a-a847-2c1a1cad82ad)
 
 
 ### Q6: Identify the highest-performing customers based on the total number of trips, the total number of seats booked, the total amount charged, and the total discount applied by each customer.
@@ -213,26 +194,7 @@ Group by users.user_id
 order by max(flights.seats) desc
 limit 250;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/a707caa5-1eb9-49fe-b226-57cbf71d48a1)
 
 
 ## CHAPTER 4: RFM ANALYSIS
@@ -252,29 +214,15 @@ RFM analysis is a marketing technique used for customer segmentation based on th
 
 Recency (R): Recency measures how recently a customer has engaged with your product or service. It answers the question: "When was the last time the customer made a purchase or interacted with us?" Customers who have engaged more recently are often considered more valuable.
 Frequency (F): Frequency measures how often a customer engages with your product or service. It answers the question: "How frequently does the customer make purchases or interact with us?" Customers who engage more often may be more loyal.
-Monetary (M): Monetary measures how much money a customer has spent on your product or service. It answers the question: "How much revenue or value has the customer-generated?" Customers who have spent more tend to be more profitable.
+Monetary (M): Monetary measures how much money a customer has spent on your product or service. It answers the question: "How much revenue or value has the customer generated?" Customers who have spent more tend to be more profitable.
 
 But Before we dive deeper let’s explore the Customer’s behaviour Habit.
-
-
-
-
-
 
 ### TraveTide Customer Flight Boarding Habits
 
 The below diagram shows the TravelTide customers' Boarding Habits, ranging from the last time a customer boarded, the Total Number of trips per customer, the number of check bags, the base fare Amount per customer, and the Total seats booked per customer. This was calculated based Using DAX
 
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/074cfbe5-d590-43a8-84ff-f1570a3253ff)
 
 
 ### Calculating Recency, Frequency, and Monetary
@@ -287,8 +235,7 @@ The Monetary was calculated by summing up the Base fare Amount for the Total tri
 
 The columns used for the RFM include (Flight.Depature_Time, Flight.trip_id, Flight.Base_Fare_Amount, Hotel.trip_id, Hotel.check_in_time, Hotel. Amount_per_room, Check bags, Nights spent, Session.Cancellation. Afterward.
 
-
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/2d3ece23-df45-42a0-987f-af087ae0b1f8)
 
 
 ### Calculation of RFM Scores: 
@@ -298,16 +245,10 @@ RFM Scores mean Assigning numerical scores to each customer based on recency, fr
 
 See the Analysis Below, Showing the segmentation of users based on their  Recency,  Frequency, and Monetary Scores, Filtering Each Segment by the number of check bags. 
 
-
-
-
-
-
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/097f5554-5c9b-4035-8855-4ae4964e6c83)
 
 ### Targeted Marketing
 The Customers were Segmented into five different groups, this was achieved by Concatenating the RFM Scores, Below is the Segment.
-
 
 High Recency, High Frequency, High Monetary Value: "High Performing customer " 
 Average Recency, Average Frequency, Average Monetary Value: "Average performing customer" 
@@ -315,6 +256,7 @@ Low Recency, Low Frequency, Low Monetary Value: "Low Performing Customers"
 Very low Recency, Very Low Frequency, Very High Monetary Value: "Almost Lost customer”
 Extremely low Recency, Extremely Low Frequency, Extremely High Monetary Value: 'Lost customer'
 
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/5147718f-7e72-45ac-a9fb-d5f037009258)
 
 
 
@@ -327,6 +269,7 @@ Low-performing customers To  Free hotel meal
 Almost Lost customer  To 'Free checked bag
 Lost customer  To cancellation fees' 
 
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/50f48a40-ef9b-43d1-acdc-b45c9030b8fc)
 
 
 
