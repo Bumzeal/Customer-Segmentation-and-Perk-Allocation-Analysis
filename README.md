@@ -5,18 +5,19 @@ In this Project, I work with the Market Department of Travel-Tide an online trav
 
 Following the startup playbook, TravelTide has maintained a hyper-focus on building an unfair advantage along a limited number of dimensions - in this case, building the biggest travel inventory and making it easily searchable. Because of this narrow focus, certain aspects of the TravelTide customer experience are underdeveloped, resulting in poor customer retention.
 
-The Head of the marketing dept is well known in the Marketing community as an expert in customer retention strategies,Using specific rewards programs, an advanced feature proven to generate repeat business if executed well.
+The Head of the marketing dept is well known in the Marketing community as an expert in customer retention strategies, Using specific rewards programs, an advanced feature proven to generate repeat business if executed well.
 
-The team's mission is to design and execute a fantastic personalized rewards program that keeps customers returning to the TravelTide platform. It is difficult to personalize rewards for customers without first understanding them, so for the project to be successful, The Team needs the data team for customer insights. Click  Below to See the Insight Provided.
+The team's mission is to design and execute a fantastic personalized rewards program that keeps customers returning to the TravelTide platform. It is difficult to personalize rewards for customers without first understanding them, so for the project to be successful, The Team needs the data team for customer insights.
 
-Based on the context, I Used SQL to extract a customer dataset from the Database and import it into Tableau, Performing Data Modelling. Explore the data at different levels of aggregation and form a plan for further analysis. I Made calculations related to the business context and then segmented customer behavior data with statistical and visual techniques using RFM techniques.
+As a Data Analyst on this Project, Based on the context, I used SQL to extract datasets from the Database, imported them into Tableau, Performed Data Modelling, Explored the data at different levels of aggregation, and formed a plan for further analysis. I Made calculations related to the business context and then segmented customer behavior using statistical and visual techniques using RFM techniques.
 
 
 ## CHAPTER 1: THE PROJECT GOAL
 
-The goal of this Project is to Help the Head of Marketing - Elena Tarrant to achieve customer retention by using the following strategy- specifically rewards programs, an advanced feature proven to generate repeat business if executed well.
+The goal of this Project is to work with the Marketing department to achieve customer retention by using the following strategy (specifically rewards programs), an advanced feature proven to generate repeat business if executed well.
 
-My mission as a Data analyst is to First check if the data supports Elena’s hypothesis about the existence of customers that would be especially interested in the perks she is proposing, Then for each customer, I should assign a likely favorite perk. Listed Below are the Perks.
+My mission as a Data analyst on this project is to check if the data supports the Marketing department’s hypothesis about the existence of customers that would be especially interested in the perks they are proposing, Then for each customer segment, I am to assign a likely favorite perk.
+Listed Below are the Perks.
 
 1. Free hotel meal
 2. Free checked bag
@@ -25,8 +26,7 @@ My mission as a Data analyst is to First check if the data supports Elena’s hy
 5. 1-night free hotel with a flight
 
 My Analysis must show what kind of travel behavior indicates affinity to each perk. For example, what kind of customer could be especially interested in a free checked bag?
-Which fields in the database contain information about these behaviors?
-How should the data be set up (e.g., filtered, aggregated) to avoid a logically flawed segmentation analysis?
+Which fields in the database contain information about these behaviors? How should the data be set up (e.g., filtered, aggregated) to avoid a logically flawed segmentation analysis?
 
 
 ## CHAPTER 2: EXPLORE THE TABLE & DATASETS
@@ -47,7 +47,6 @@ This table displays demographic information for users, encompassing 11 columns a
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/7dca6ae2-b74b-4483-926f-8acdefbdc3d8)
 
 ### SESSION TABLE:
-
 This table presents data on individual browsing sessions, specifically including sessions with a minimum of 2 clicks. It comprises 13 columns, and it has recorded over 50,000 records as detailed below. See Query Below
 
     SELECT sessions.session_id ,sessions.user_id,sessions.trip_id,sessions.flight_booked,sessions.hotel_booked,sessions.cancellation  
@@ -58,7 +57,6 @@ This table presents data on individual browsing sessions, specifically including
 
 
 ### FLIGHT TABLE: 
-
 This table captures the information about purchased flights, This table contains 13 columns and more than 50,000 records were captured as Below.See Query Below
 
     SQL Query All Column from Flights Table
@@ -73,7 +71,6 @@ This table captures the information about purchased flights, This table contains
 
 
 ## CHAPTER 3: EXPLORATORY ANALYSIS/ DATA AGGREGATION
-
 In this Chapter, I performed some Exploratory Analysis and aggregation on the Dataset to see the performance of the Users.
 1. What are the Top Airlines with the most customers and Total count of uncancelled Trips?
 2. How many customers Booked both flights and a hotel, How Many customers booked only either of the two?
