@@ -2,9 +2,9 @@
 ## THIS PROJECT FEATURES THREE STAGES:
 
 
-Familiarize yourself with the business context. Use SQL to extract a customer dataset. Explore the data at different levels of aggregation and form a plan for further analysis.
+Based on the context. Use SQL to extract a customer dataset. Explore the data at different levels of aggregation and form a plan for further analysis.
 Make calculations related to the business context then segment customer behavior data with statistical and visual techniques using the appropriate tools.
-Create an executive summary and slides of the customer segmentation results and record a video presentation.
+
 
 ## CHAPTER 1: THE PROJECT GOAL
 
@@ -33,10 +33,10 @@ This database comprises four tables: Users, Sessions, Flights, and Hotels. In th
 
 This table displays demographic information for users, encompassing 11 columns and approximately 50,000 user records. I employed Data Definition Language (SELECT) to present a subset of columns and records from this table. See Query below
 
-Select u.user_id,u.birthdate,u.gender,
-u.married,u.has_children,u.home_country,
-u.home_city,u.home_airport 
-From users As u;
+    Select u.user_id,u.birthdate,u.gender,
+    u.married,u.has_children,u.home_country,
+    u.home_city,u.home_airport 
+    From users As u;
  
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/7dca6ae2-b74b-4483-926f-8acdefbdc3d8)
 
@@ -44,8 +44,8 @@ From users As u;
 
 This table presents data on individual browsing sessions, specifically including sessions with a minimum of 2 clicks. It comprises 13 columns, and it has recorded over 50,000 records as detailed below. See Query Below
 
-SELECT sessions.session_id ,sessions.user_id,sessions.trip_id,sessions.flight_booked,sessions.hotel_booked,sessions.cancellation  
-FROM public.sessions;
+    SELECT sessions.session_id ,sessions.user_id,sessions.trip_id,sessions.flight_booked,sessions.hotel_booked,sessions.cancellation  
+    FROM public.sessions;
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/97a5b723-e804-4482-98b4-bb94d51a4015)
 
@@ -55,15 +55,15 @@ FROM public.sessions;
 
 This table captures the information about purchased flights, This table contains 13 columns and more than 50,000 records were captured as Below.See Query Below
 
-SQL Query All Column from Flights Table
-SELECT * FROM public.flights;
+    SQL Query All Column from Flights Table
+    SELECT * FROM public.flights;
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/ea9dccd0-9cfe-4729-9ee2-1639026f66c6)
 
 
 ### HOTELS TABLE 
-This table records details of hotel stays that were purchased. It consists of 6 columns and has documented over 50,000 records, as described below.
-SELECT * FROM public.hotels;
+    This table records details of hotel stays that were purchased. It consists of 6 columns and has documented over 50,000 records, as described below.
+    SELECT * FROM public.hotels;
 
 
 ## CHAPTER 3: EXPLORATORY ANALYSIS/ DATA AGGREGATION
@@ -104,7 +104,6 @@ In this Chapter, I performed some Exploratory Analysis and aggregation on the Da
     where sessions.cancellation =false
     Group by sessions.flight_booked,sessions.hotel_booked 
     Order by count(Distinct users.user_id)Desc ;
-
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/76db1745-ab0d-4979-8d62-f3ccecba2138)
 
@@ -213,11 +212,11 @@ The below diagram shows the TravelTide customers' Boarding Habits, ranging from 
 
 To calculate Recency, I use the "DATEDIFF" function to find the time difference between today's date and the last date Each customer boarded a flight. Recency is often used in customer analytics to measure how recently a customer has engaged with a product or service
 
-The Frequency was obtained by calculating the Total Trip count for each customer using a Measure called (Distinct count).
+* The Frequency was obtained by calculating the Total Trip count for each customer using a Measure called (Distinct count).
 
-The Monetary was calculated by summing up the Base fare Amount for the Total trip for Each customer.
+* The Monetary was calculated by summing up the Base fare Amount for the Total trip for Each customer.
 
-The columns used for the RFM include (Flight.Depature_Time, Flight.trip_id, Flight.Base_Fare_Amount, Hotel.trip_id, Hotel.check_in_time, Hotel. Amount_per_room, Check bags, Nights spent, Session.Cancellation. Afterward.
+      The columns used for the RFM include (Flight.Depature_Time, Flight.trip_id, Flight.Base_Fare_Amount, Hotel.trip_id, Hotel.check_in_time, Hotel. Amount_per_room, Check bags, Nights       spent, Session.Cancellation. Afterward.
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/2d3ece23-df45-42a0-987f-af087ae0b1f8)
 
@@ -225,8 +224,7 @@ The columns used for the RFM include (Flight.Depature_Time, Flight.trip_id, Flig
 ### Calculation of RFM Scores: 
 
 RFM Scores mean Assigning numerical scores to each customer based on recency, frequency, and monetary value. For this Project, I assigned scores ranging from 1 to 5, with 5 indicating the highest recency, frequency, or monetary value.
-
-See the Analysis Below, Showing the segmentation of users based on their  Recency, Frequency, and Monetary Scores, Filtering Each Segment by the number of check bags. 
+See the Analysis Below, Showing the segmentation of users based on their Recency, Frequency, and Monetary Scores, Filtering Each Segment by the number of check bags. 
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/097f5554-5c9b-4035-8855-4ae4964e6c83)
 
