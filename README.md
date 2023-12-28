@@ -38,12 +38,7 @@ u.married,u.has_children,u.home_country,
 u.home_city,u.home_airport 
 From users As u;
  
-
-
-
-
-
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/7dca6ae2-b74b-4483-926f-8acdefbdc3d8)
 
 ### SESSION TABLE:
 
@@ -52,7 +47,7 @@ This table presents data on individual browsing sessions, specifically including
 SELECT sessions.session_id ,sessions.user_id,sessions.trip_id,sessions.flight_booked,sessions.hotel_booked,sessions.cancellation  
 FROM public.sessions;
 
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/97a5b723-e804-4482-98b4-bb94d51a4015)
 
 
 
@@ -63,28 +58,12 @@ This table captures the information about purchased flights, This table contains
 SQL Query All Column from Flights Table
 SELECT * FROM public.flights;
 
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/ea9dccd0-9cfe-4729-9ee2-1639026f66c6)
 
 
 ### HOTELS TABLE 
 This table records details of hotel stays that were purchased. It consists of 6 columns and has documented over 50,000 records, as described below.
 SELECT * FROM public.hotels;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## CHAPTER 3: EXPLORATORY ANALYSIS/ DATA AGGREGATION
@@ -110,25 +89,7 @@ where sessions.cancellation=false
 Group by flights.trip_airline
 order by count(Distinct users.user_id) desc;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/66a86f7a-7aca-4f7b-85dd-5e651121a4e9)
 
 
 ### Q2. How many customers Booked both flights and a hotel, How Many customers booked only either of the two? See query below
@@ -141,45 +102,26 @@ order by count(Distinct users.user_id) desc;
     Join public.flights
     On flights.trip_id = sessions.trip_id
     where sessions.cancellation =false
-   Group by sessions.flight_booked,sessions.hotel_booked 
+    Group by sessions.flight_booked,sessions.hotel_booked 
     Order by count(Distinct users.user_id)Desc ;
 
 
-
-
-
-
-
-
-
-
-
+![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/76db1745-ab0d-4979-8d62-f3ccecba2138)
 
 
 ### Q3. How many users Canceled or Didn’t cancel their flight Booking? See Query Below
 
-    Select sessions.cancellation,count(Distinct users.user_id) As no_of_customer,
-    		count(Distinct flights.trip_id) As no_trip
+   Select sessions.cancellation,count(Distinct users.user_id) As no_of_customer,
+   count(Distinct flights.trip_id) As no_trip
    From public.users 
    Join public.sessions 
    On sessions.user_id = users.user_id
    Join public.flights
    On flights.trip_id = sessions.trip_id
-  Group by sessions.cancellation
-    order by sessions.cancellation ASC;
+   Group by sessions.cancellation
+   order by sessions.cancellation ASC;
 
- 
-
-
-
-
-
-
-
-
-
-
-
+ ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/2c4a1a07-c909-49ed-b977-6b14d605aede)
 
 
 ### Q4: How many users Canceled or Didn’t cancel their flight Booking?
