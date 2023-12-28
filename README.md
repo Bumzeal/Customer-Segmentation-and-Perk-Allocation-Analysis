@@ -31,13 +31,14 @@ Which fields in the database contain information about these behaviors? How shou
 
 ## CHAPTER 2: EXPLORE THE TABLE & DATASETS
 
-TravelTide stores its data in a relational database, which I  access by Connecting to the TravelTide database. postgres://Test:bQNxVzJL4g6u@ep-noisy-flower-846766.us-east-2.aws.neon.tech/TravelTide:
-This database comprises four tables: Users, Sessions, Flights, and Hotels. In the following sections, I explored and provided snapshots of each table that I queried using the SQL Select statement, and I also provided the Query.
+TravelTide stores it's data in a relational database, which I  access by Connecting to the TravelTide database.
+This database comprises four tables: Users, Sessions, Flights, and Hotels.
+In the following sections, I explored and provided snapshots of each table that queried using the SQL Select statement, and also provided the Query.
 
 
 ### USERS TABLE
 
-This table displays demographic information for users, encompassing 11 columns and approximately 50,000 user records. I employed Data Definition Language (SELECT) to present a subset of columns and records from this table. See Query below
+This table displays demographic information for users, encompassing 11 columns and approximately 50,000 user records.I employed Data Definition Language (SELECT) to present a subset of columns and records from this table. See Query below
 
     Select u.user_id,u.birthdate,u.gender,
     u.married,u.has_children,u.home_country,
