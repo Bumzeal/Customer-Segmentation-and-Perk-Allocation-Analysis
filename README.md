@@ -6,35 +6,6 @@ Familiarize yourself with the business context. Use SQL to extract a customer da
 Make calculations related to the business context then segment customer behavior data with statistical and visual techniques using the appropriate tools.
 Create an executive summary and slides of the customer segmentation results and record a video presentation.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## CHAPTER 1: THE PROJECT GOAL
 
 The goal of this Project is to Help the Head of Marketing - Elena Tarrant to achieve customer retention by using the following strategy- specifically rewards programs, an advanced feature proven to generate repeat business if executed well.
@@ -139,7 +110,7 @@ How many Users Brought in Checked Bags, or How many Checked Bags were brought by
 How many Users are consistent with the hotel, How many rooms and what’s the total amount spent By Each of the Customers?
 
 
-Q1: What are the Top Airlines with the most customers and Total count of uncancelled Trips? See the Query Below
+### Q1: What are the Top Airlines with the most customers and Total count of uncancelled Trips? See the Query Below
 
 select flights.trip_airline,count(Distinct flights.trip_id) As Total_count__of_trips,
 count(Distinct users.user_id) As No_of_customer
@@ -173,7 +144,7 @@ order by count(Distinct users.user_id) desc;
 
 
 
-Q2. How many customers Booked both flights and a hotel, How Many customers booked only either of the two? See query below
+### Q2. How many customers Booked both flights and a hotel, How Many customers booked only either of the two? See query below
 
     Select count(Distinct users.user_id) As Total_customer,sessions.flight_booked,
     sessions.hotel_booked  
@@ -198,7 +169,7 @@ Q2. How many customers Booked both flights and a hotel, How Many customers booke
 
 
 
-Q3. How many users Canceled or Didn’t cancel their flight Booking? See Query Below
+### Q3. How many users Canceled or Didn’t cancel their flight Booking? See Query Below
 
     Select sessions.cancellation,count(Distinct users.user_id) As no_of_customer,
     		count(Distinct flights.trip_id) As no_trip
@@ -224,7 +195,7 @@ Q3. How many users Canceled or Didn’t cancel their flight Booking? See Query B
 
 
 
-Q4: How many users Canceled or Didn’t cancel their flight Booking?
+### Q4: How many users Canceled or Didn’t cancel their flight Booking?
 
 The table contains the total count of unique users. The query results reveal that 1,901,038 customers chose not to cancel their trips, while 89,344 decided to cancel. To better understand the reasons for cancellations, further investigation is required.
 For this project's objective of enhancing customer retention, the focus shifts to understanding users' baggage preferences. Specifically, we aim to determine how many users opted for checked bags and how many checked bags each customer brought. The table below illustrates that 584,473 customers opted not to bring any checked bags, while 565,580 had one checked bag, and 89,669 brought two checked bags. See query Below
@@ -256,7 +227,7 @@ For this project's objective of enhancing customer retention, the focus shifts t
 
 
 
-Q5: How many Users are consistent with the hotel, How many rooms, and what’s the total amount spent By Each of the Customers
+### Q5: How many Users are consistent with the hotel, How many rooms, and what’s the total amount spent By Each of the Customers
 
 This query identifies customers who consistently book both flights and hotels, displaying the number of trips, rooms booked, and the number of nights spent by each of these customers. It also calculates the total amount spent by each customer. The goal is to recognize and reward customers who demonstrate loyalty to the airline, See the Query Below
 
@@ -297,7 +268,7 @@ order by sub.Total_amt_paid desc;
 
 
 
-Q6: Identify the highest-performing customers based on the total number of trips, the total number of seats booked, the total amount charged, and the total discount applied by each customer.
+### Q6: Identify the highest-performing customers based on the total number of trips, the total number of seats booked, the total amount charged, and the total discount applied by each customer.
 
 Offering rewards based on the number of seats paid for can encourage customer loyalty. so here I segmented the customers based on their No of trips and seats and the Total amount of base fare Booked, filtering them based on customers that didn’t cancel their flights. See the Query Below
 
@@ -361,7 +332,7 @@ But Before we dive deeper let’s explore the Customer’s behaviour Habit.
 
 
 
-TraveTide Customer Flight Boarding Habits
+### TraveTide Customer Flight Boarding Habits
 
 The below diagram shows the TravelTide customers' Boarding Habits, ranging from the last time a customer boarded, the Total Number of trips per customer, the number of check bags, the base fare Amount per customer, and the Total seats booked per customer. This was calculated based Using DAX
 
@@ -377,7 +348,7 @@ The below diagram shows the TravelTide customers' Boarding Habits, ranging from 
 
 
 
-Calculating Recency, Frequency, and Monetary
+### Calculating Recency, Frequency, and Monetary
 
 To calculate Recency, I use the "DATEDIFF" function to find the time difference between today's date and the last date Each customer boarded a flight. Recency is often used in customer analytics to measure how recently a customer has engaged with a product or service
 
@@ -391,7 +362,7 @@ The columns used for the RFM include (Flight.Depature_Time, Flight.trip_id, Flig
 
 
 
-Calculation of RFM Scores: 
+### Calculation of RFM Scores: 
 
 RFM Scores mean Assigning numerical scores to each customer based on recency, frequency, and monetary value. For this Project, I assigned scores ranging from 1 to 5, with 5 indicating the highest recency, frequency, or monetary value.
 
@@ -405,7 +376,7 @@ See the Analysis Below, Showing the segmentation of users based on their  Recenc
 
 
 
-Targeted Marketing
+### Targeted Marketing
 The Customers were Segmented into five different groups, this was achieved by Concatenating the RFM Scores, Below is the Segment.
 
 
@@ -419,7 +390,7 @@ Extremely low Recency, Extremely Low Frequency, Extremely High Monetary Value: '
 
 
 
-Conclusion 
+### Conclusion 
  Having carried out the Segmentation, the Final step is to tailor marketing strategies and campaigns for each customer segment based on the RFM Aggregated score. For this project, I offered the listed Perks as follows.
  High-performing customers To Exclusive Discounts
 Average performing customers To 1-night free hotel with a flight
