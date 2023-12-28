@@ -12,11 +12,11 @@ The goal of this Project is to Help the Head of Marketing - Elena Tarrant to ach
 
 My mission as a Data analyst is to First check if the data supports Elena’s hypothesis about the existence of customers that would be especially interested in the perks she is proposing, Then for each customer, I should assign a likely favorite perk. Listed Below are the Perks.
 
-Free hotel meal
-Free checked bag
-No cancellation fees
-Exclusive discounts
-1-night free hotel with a flight
+1. Free hotel meal
+2. Free checked bag
+3. No cancellation fees
+4. Exclusive discounts
+5. 1-night free hotel with a flight
 
 My Analysis must show what kind of travel behavior indicates affinity to each perk. For example, what kind of customer could be especially interested in a free checked bag?
 Which fields in the database contain information about these behaviors?
@@ -69,11 +69,11 @@ SELECT * FROM public.hotels;
 ## CHAPTER 3: EXPLORATORY ANALYSIS/ DATA AGGREGATION
 
 In this Chapter, I performed some Exploratory Analysis and aggregation on the Dataset to see the performance of the Users.
-What are the Top Airlines with the most customers and Total count of uncancelled Trips?
-How many customers Booked both flights and a hotel, How Many customers booked only either of the two?
-How many users Canceled or Didn’t cancel their flight Booking?
-How many Users Brought in Checked Bags, or How many Checked Bags were brought by each Customer and Customer with No Check Bag?
-How many Users are consistent with the hotel, How many rooms and what’s the total amount spent By Each of the Customers?
+1. What are the Top Airlines with the most customers and Total count of uncancelled Trips?
+2. How many customers Booked both flights and a hotel, How Many customers booked only either of the two?
+3. How many users Canceled or Didn’t cancel their flight Booking?
+4. How many Users Brought in Checked Bags, or How many Checked Bags were brought by each Customer and Customer with No Check Bag?
+5. How many Users are consistent with the hotel, How many rooms and what’s the total amount spent By Each of the Customers?
 
 
 ### Q1: What are the Top Airlines with the most customers and Total count of uncancelled Trips? See the Query Below
@@ -140,22 +140,6 @@ For this project's objective of enhancing customer retention, the focus shifts t
     order by flights.checked_bags ASC;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Q5: How many Users are consistent with the hotel, How many rooms, and what’s the total amount spent By Each of the Customers
 
 This query identifies customers who consistently book both flights and hotels, displaying the number of trips, rooms booked, and the number of nights spent by each of these customers. It also calculates the total amount spent by each customer. The goal is to recognize and reward customers who demonstrate loyalty to the airline, See the Query Below
@@ -204,11 +188,11 @@ In this chapter, I made calculations related to the business context and then se
 Based on the Business context, customers are to be segmented based on their behavior using the data provided and assigned the Perk that best suits each customer, To achieve this properly I adopted the RFM ANALYSIS 
 PERKS:
 
-Free hotel meal 
-Free checked bag
-No cancellation fees 
-Exclusive discounts 
-1-night free hotel with a flight
+1. Free hotel meal 
+2. Free checked bag
+3. No cancellation fees 
+4. Exclusive discounts 
+5. 1-night free hotel with a flight
 
 RFM analysis is a marketing technique used for customer segmentation based on their past behavior. It is a data-driven approach that helps businesses understand and categorize their customers into different groups to tailor marketing strategies more effectively. RFM stands for Recency, Frequency, and Monetary.
 
@@ -229,7 +213,7 @@ The below diagram shows the TravelTide customers' Boarding Habits, ranging from 
 
 To calculate Recency, I use the "DATEDIFF" function to find the time difference between today's date and the last date Each customer boarded a flight. Recency is often used in customer analytics to measure how recently a customer has engaged with a product or service
 
-The Frequency was obtained by calculating the Total Trip count for each customer using a Measure called (Distinct count ).
+The Frequency was obtained by calculating the Total Trip count for each customer using a Measure called (Distinct count).
 
 The Monetary was calculated by summing up the Base fare Amount for the Total trip for Each customer.
 
