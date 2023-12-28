@@ -23,26 +23,13 @@ Which fields in the database contain information about these behaviors?
 How should the data be set up (e.g., filtered, aggregated) to avoid a logically flawed segmentation analysis?
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## CHAPTER 2: EXPLORE THE TABLE & DATASETS
 
 TravelTide stores its data in a relational database, which I  access by Connecting to the TravelTide database. postgres://Test:bQNxVzJL4g6u@ep-noisy-flower-846766.us-east-2.aws.neon.tech/TravelTide:
 This database comprises four tables: Users, Sessions, Flights, and Hotels. In the following sections, I explored and provided snapshots of each table that I queried using the SQL Select statement, and I also provided the Query.
 
 
-USERS TABLE
+### USERS TABLE
 
 This table displays demographic information for users, encompassing 11 columns and approximately 50,000 user records. I employed Data Definition Language (SELECT) to present a subset of columns and records from this table. See Query below
 
@@ -58,7 +45,7 @@ From users As u;
 
 
 
-SESSION TABLE:
+### SESSION TABLE:
 
 This table presents data on individual browsing sessions, specifically including sessions with a minimum of 2 clicks. It comprises 13 columns, and it has recorded over 50,000 records as detailed below. See Query Below
 
@@ -69,7 +56,7 @@ FROM public.sessions;
 
 
 
-FLIGHT TABLE: 
+### FLIGHT TABLE: 
 
 This table captures the information about purchased flights, This table contains 13 columns and more than 50,000 records were captured as Below.See Query Below
 
@@ -78,7 +65,7 @@ SELECT * FROM public.flights;
 
 
 
-HOTELS TABLE 
+### HOTELS TABLE 
 This table records details of hotel stays that were purchased. It consists of 6 columns and has documented over 50,000 records, as described below.
 SELECT * FROM public.hotels;
 
