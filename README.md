@@ -3,7 +3,7 @@
 
 
 Based on the context. Use SQL to extract a customer dataset. Explore the data at different levels of aggregation and form a plan for further analysis.
-Make calculations related to the business context then segment customer behavior data with statistical and visual techniques using the appropriate tools.
+Make calculations related to the business context then segment customer behavior data with statistical and visual techniques using the appropriate tools.kk
 
 
 ## CHAPTER 1: THE PROJECT GOAL
