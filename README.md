@@ -78,16 +78,16 @@ In this Chapter, I performed some Exploratory Analysis and aggregation on the Da
 
 ### Q1: What are the Top Airlines with the most customers and Total count of uncancelled Trips? See the Query Below
 
-select flights.trip_airline,count(Distinct flights.trip_id) As Total_count__of_trips,
-count(Distinct users.user_id) As No_of_customer
-From public.users 
-Join public.sessions 
-On sessions.user_id = users.user_id
-Join public.flights
-On flights.trip_id = sessions.trip_id
-where sessions.cancellation=false
-Group by flights.trip_airline
-order by count(Distinct users.user_id) desc;
+    select flights.trip_airline,count(Distinct flights.trip_id) As Total_count__of_trips,
+    count(Distinct users.user_id) As No_of_customer
+    From public.users 
+    Join public.sessions 
+    On sessions.user_id = users.user_id
+    Join public.flights
+    On flights.trip_id = sessions.trip_id
+    where sessions.cancellation=false
+    Group by flights.trip_airline
+    order by count(Distinct users.user_id) desc;
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/66a86f7a-7aca-4f7b-85dd-5e651121a4e9)
 
@@ -111,15 +111,15 @@ order by count(Distinct users.user_id) desc;
 
 ### Q3. How many users Canceled or Didn’t cancel their flight Booking? See Query Below
 
-   Select sessions.cancellation,count(Distinct users.user_id) As no_of_customer,
-   count(Distinct flights.trip_id) As no_trip
-   From public.users 
-   Join public.sessions 
-   On sessions.user_id = users.user_id
-   Join public.flights
-   On flights.trip_id = sessions.trip_id
-   Group by sessions.cancellation
-   order by sessions.cancellation ASC;
+    Select sessions.cancellation,count(Distinct users.user_id) As no_of_customer,
+    count(Distinct flights.trip_id) As no_trip
+    From public.users 
+    Join public.sessions 
+    On sessions.user_id = users.user_id
+    Join public.flights
+    On flights.trip_id = sessions.trip_id
+    Group by sessions.cancellation
+    order by sessions.cancellation ASC;
 
  ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/2c4a1a07-c909-49ed-b977-6b14d605aede)
 
@@ -144,20 +144,20 @@ For this project's objective of enhancing customer retention, the focus shifts t
 
 This query identifies customers who consistently book both flights and hotels, displaying the number of trips, rooms booked, and the number of nights spent by each of these customers. It also calculates the total amount spent by each customer. The goal is to recognize and reward customers who demonstrate loyalty to the airline, See the Query Below
 
-Select *
-From (select users.user_id,count(hotels.trip_id) As No_trip,count(hotels.nights) As Total_night_spent,
-count(hotels.rooms) As No_rooms_booked,sum(hotels.hotel_per_room_usd) As Total_amt_paid 
-From public.users 
-Join public.sessions 
-On sessions.user_id = users.user_id
-Join public.flights
-On flights.trip_id = sessions.trip_id
-Join public.hotels
-On hotels.trip_id = flights.trip_id
-Group by users.user_id) As sub
-where  sub.Total_amt_paid > (select avg(hotels.hotel_per_room_usd) 
-From hotels) and sub.No_rooms_booked > 3
-order by sub.Total_amt_paid desc;
+    Select *
+    From (select users.user_id,count(hotels.trip_id) As No_trip,count(hotels.nights) As Total_night_spent,
+    count(hotels.rooms) As No_rooms_booked,sum(hotels.hotel_per_room_usd) As Total_amt_paid 
+    From public.users 
+    Join public.sessions 
+    On sessions.user_id = users.user_id
+    Join public.flights
+    On flights.trip_id = sessions.trip_id
+    Join public.hotels
+    On hotels.trip_id = flights.trip_id
+    Group by users.user_id) As sub
+    where  sub.Total_amt_paid > (select avg(hotels.hotel_per_room_usd) 
+    From hotels) and sub.No_rooms_booked > 3
+    order by sub.Total_amt_paid desc;
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/59e8be6c-3c54-4a5a-a847-2c1a1cad82ad)
 
@@ -166,17 +166,17 @@ order by sub.Total_amt_paid desc;
 
 Offering rewards based on the number of seats paid for can encourage customer loyalty. so here I segmented the customers based on their No of trips and seats and the Total amount of base fare Booked, filtering them based on customers that didn’t cancel their flights. See the Query Below
 
-select users.user_id,count(flights.trip_id) As No_trip,max(flights.seats)As No_seat,
-sum(flights.base_fare_usd) As Amount_charged  
-From public.users 
-Join public.sessions 
-On sessions.user_id = users.user_id
-Join public.flights
-On flights.trip_id = sessions.trip_id
-where sessions.cancellation = False 
-Group by users.user_id 
-order by max(flights.seats) desc
-limit 250;
+    select users.user_id,count(flights.trip_id) As No_trip,max(flights.seats)As No_seat,
+    sum(flights.base_fare_usd) As Amount_charged  
+    From public.users 
+    Join public.sessions 
+    On sessions.user_id = users.user_id
+    Join public.flights
+    On flights.trip_id = sessions.trip_id
+    where sessions.cancellation = False 
+    Group by users.user_id 
+    order by max(flights.seats) desc
+    limit 250;
 
 ![image](https://github.com/Bumzeal/Customer-Segmentation-and-Perk-Allocation-Analysis/assets/78567274/a707caa5-1eb9-49fe-b226-57cbf71d48a1)
 
@@ -196,11 +196,11 @@ PERKS:
 
 RFM analysis is a marketing technique used for customer segmentation based on their past behavior. It is a data-driven approach that helps businesses understand and categorize their customers into different groups to tailor marketing strategies more effectively. RFM stands for Recency, Frequency, and Monetary.
 
-Recency (R): Recency measures how recently a customer has engaged with your product or service. It answers the question: "When was the last time the customer made a purchase or interacted with us?" Customers who have engaged more recently are often considered more valuable.
-Frequency (F): Frequency measures how often a customer engages with your product or service. It answers the question: "How frequently does the customer make purchases or interact with us?" Customers who engage more often may be more loyal.
-Monetary (M): Monetary measures how much money a customer has spent on your product or service. It answers the question: "How much revenue or value has the customer generated?" Customers who have spent more tend to be more profitable.
-
-But Before we dive deeper let’s explore the Customer’s behaviour Habit.
+* Recency (R): Recency measures how recently a customer has engaged with your product or service. It answers the question: "When was the last time the customer made a purchase or interacted with us?" Customers who have engaged more recently are often considered more valuable.
+  
+* Frequency (F): Frequency measures how often a customer engages with your product or service. It answers the question: "How frequently does the customer make purchases or interact with us?" Customers who engage more often may be more loyal.
+  
+* Monetary (M): Monetary measures how much money a customer has spent on your product or service. It answers the question: "How much revenue or value has the customer generated?" Customers who have spent more tend to be more profitable. But Before we dive deeper let’s explore the Customer’s behaviour Habit.
 
 ### TraveTide Customer Flight Boarding Habits
 
